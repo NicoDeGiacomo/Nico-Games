@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<head>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="CSS/CSS.css">
+	<script src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
+	<script type="text/javascript" src="JS/JS.js"></script>	
+	
+
+	<title>Ahorcado</title>
+
+
+</head>
+<body align="center" onload="iniciar()">
+	<header>
+		<h1>
+			<span align="center" class="label label-primary">Ahorcado</span>
+		</h1>
+	</header>
+
+	<aside>
+		<div style="margin-bottom: 10px;">
+			<span id="errorMessage" style="display:none;margin-left: 10%;" class="label label-warning">Warning</span>
+		</div>
+
+		<div>
+			<button id="modoDeJuego" class="btn btn-default" onclick="DosJugadores(event)">Dos Jugadores</button>
+			<input class="form-control" type="password" style="display:none" id="PlaceHolder" onkeypress="escribirPalabra(event)" placeholder="Ingresa una palabra">		
+		</div>
+
+		<div style="margin-top: 10px;">
+			<button id="modoTeclado" class="btn btn-default" onclick="CambioTeclado(event)">Cambiar teclado</button>
+		</div>
+
+	</aside>
+
+	<section>		
+		<br>
+		<div id="dibujo">
+			<img class="imagen" src="images/ahorcado-vacio.png" />
+            <img class="imagen" src="images/cabeza.png" hidden />
+            <img class="imagen" src="images/cuerpo.png" hidden />
+            <img class="imagen" src="images/brazos.png" hidden />
+            <img class="imagen" src="images/piernas.png" hidden />
+            <img class="imagen" src="images/ahorcado-completo.png" hidden />
+		</div>		
+		<br>
+		<div id="letras"></div>
+		<br>
+		<div id="teclado"></div>
+		<input type="hidden" id="tipoTeclado">
+		<br>		
+		<h3>
+			<span class="label label-default" id="LtrTIT">Letras usadas:</span>
+		</h3>
+		<br>
+		<div id="letrasUsadas"></div>
+
+
+	</section>
+
+</body>

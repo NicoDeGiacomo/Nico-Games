@@ -1,0 +1,67 @@
+.letras {
+	width: 30px;
+	height: 30px;
+	background-color: #D1F7FC;
+	border-bottom: 3px solid #0E0088;
+	display: inline-block;
+    margin: 2px;
+    /*padding-top: 15px;*/
+    text-align: center;
+    text-transform: uppercase;
+    vertical-align: bottom;
+}
+#dibujo {
+	position: relative;	
+	height: 210px;
+	width: 256px;
+}
+
+body{
+	background-color: #FFFECB;
+
+}
+
+.imagen {
+	position: absolute;
+	top: -20%;
+	left: 190%;
+}
+
+#teclado{
+	position: absolute;
+	top: 400px;
+	left: 485px;
+	width: 310px;
+}
+#letrasUsadas{
+	display: inline-block;
+	margin-top: 100px;
+}
+#LtrTIT{	
+	position: absolute;
+	top: 400px;
+	left: 565px;
+	margin-top: 100px;
+
+}
+p{
+display: inline-block;
+margin-right: 5px;
+font-size: 20px;
+vertical-align: center;
+}
+header,section{
+	text-align: center;
+}
+aside{
+	float:left;
+	width: 20%;	
+	margin-top: 100px;
+	/*Para hacer que aparezca adelante del div dibujo (si esta atras no se lo puede clickear)*/
+	position: relative;
+   	z-index: 100;   	
+}
+#PlaceHolder{
+	margin-left: 40px;
+	width: 200px;
+}

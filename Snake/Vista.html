@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<head>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="CSS/CSS.css">
+	<script src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
+	<script type="text/javascript" src="JS/JS.js"></script>	
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+	<title>Snake</title>
+	<script>
+		function changeDifficulty(dif){
+			//alert(dif)
+			if (dif=="easy") {$("#dificultad").val("easy")};
+			if (dif=="medium") {$("#dificultad").val("medium")};
+			if (dif=="hard") {$("#dificultad").val("hard")};
+			if (dif=="insane") {$("#dificultad").val("insane")};
+		}
+	</script>
+
+</head>
+<body style="background-image: url(IMAGES/background-image.jpg)">
+	<nav class="navbar navbar-inverse" style="background-color:black !IMPORTANT; border-color:black !IMPORTANT;"><h1 style="text-align:center; color:azure;">SNAKE</h1></nav>
+	<div style="float:left; width:35%; text-align:center; border-radius:30px; background-color:black">
+		<aside>
+			<div style="height: 290px;">
+				<h3 style="color:azure;">
+					Instructions:
+				</h3>
+				<ul style="text-align:left; color:white;">
+					<li>
+						Press "P" to star playing
+					</li>
+					<li>
+						You can pause the game at any moment with "P"
+					</li>
+					<li>
+						Choose difficulty level before start playing
+					</li>
+					<li>
+						Default difficulty level is easy.
+					</li>
+					<li>
+						Type your name in de box below, you can change it at any time. The score will be saved under that name
+					</li>
+					<li>
+						The default name will be Anonymous
+					</li>
+				</ul>
+				<div style="width:100%;margin-bottom: 5px;">
+					<input id="Username" type="text" placeholder="Username" style="border-style:solid; border-width:1px; border-radius:5px; text-align:center; border-color:#ffffff; background-color:#000000; color:#ffffff; ">
+				</div>
+				<!-- Single button -->
+				<div id="cambioDeDificultad" style="width:100%">
+					<div class="btn-group">
+						<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="true" style="background-color: black; color:white; margin-bottom:10px">
+							Select dificulty level <span class="caret"></span>
+						</button>					
+						<ul class="dropdown-menu" role="menu" style="background-color: black; border-color:white;">
+							<li><a onClick="changeDifficulty('easy')" style="color:white;">Easy</a></li>
+							<li><a onClick="changeDifficulty('medium')()" style="color:white;">Medium</a></li>
+							<li><a onClick="changeDifficulty('hard')()" style="color:white;">Hard</a></li>
+							<li><a onClick="changeDifficulty('insane')()" style="color:white;">Insane!</a></li>			
+							<input type="hidden" value="easy" id="dificultad">
+						</ul>						
+					</div>
+				</div>
+				<span style="display: none; /*color: white;*/ background-color:gray; border-radius:10px; padding:5px; " id="difSpan"></span>
+				<br>
+			</div>
+		</aside>
+	</div>
+	<div>
+		<canvas id="canvas" width="450" height="450" style="margin-left: 30px; float: left;"></canvas>
+	</div>
+	<div style="float:right; width:25%; text-align:center; border-radius:30px; background-color:black">
+		<aside>
+			<div style="height: 290px;">
+				<style>
+					table, th, td {
+						border: 1px solid white;
+						border-collapse: collapse;
+					}
+					th, td {
+						padding: 5px;
+					}
+				</style>
+
+				<div align="center" style="margin-top: 10%;">
+					<table style="width:90%; color: white;">
+						<tr>
+							<th>Username</th>
+							<th>Points</th>
+						</tr>
+						<tr>
+							<td id="name0"></td>
+							<td id="score0"></td>
+						</tr>
+						<tr>
+							<td id="name1"></td>
+							<td id="score1"></td>
+						</tr>
+						<tr>
+							<td id="name2"></td>
+							<td id="score2"></td>
+						</tr>
+						<tr>
+							<td id="name3"></td>
+							<td id="score3"></td>
+						</tr>
+						<tr>
+							<td id="name4"></td> 
+							<td id="score4"></td>
+						</tr>
+					</table>
+				</div>
+			</div>
+		</aside>
+	</div>
+</body>

@@ -1,0 +1,113 @@
+canvas {
+	border: 1px solid black;
+}
+
+#body:after
+{
+opacity:0.1;
+filter:alpha(opacity=10);	
+}
+body {
+    background-repeat: no-repeat;
+}
+html,
+body{
+    height: 100%;
+}
+body{
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+canvas {
+    margin: 30px;
+    background-color: #ffffff;
+    opacity: 0.8;
+    filter: alpha(opacity=60); /* For IE8 and earlier */
+}
+.enjoy-css {
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  font-weight: 400;
+  padding: 6px 12px;
+  overflow: hidden;
+  border: none;
+  -webkit-border-radius: 13px;
+  border-radius: 4px;
+  font: normal 14px/1 Arial, Helvetica, sans-serif;
+  color: rgba(0,0,0,1);
+  text-align: center;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  background: #ffffff;
+  text-shadow: 1px 1px 1px rgba(0,0,0,0.2) ;
+  display: inline-block;
+  margin-bottom: 10px;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.42857143;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-image: none;
+  border: 1px solid transparent;
+  border-radius: 4px;
+}
+.tg   {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border-color: #bbb;
+    margin: 0px auto;
+}
+.tg td {
+    font-family: Arial,  sans-serif;
+    font-size: 14px;
+    padding: 11px 18px;
+    border-style: solid;
+    border-width: 1px;
+    overflow: hidden;
+    word-break: normal;
+    border-color: #bbb;
+    color: #594F4F;
+    background-color: #E0FFEB;
+}
+.tg th {
+    font-family: Arial,  sans-serif;
+    font-size: 14px;
+    font-weight: normal;
+    padding: 11px 18px;
+    border-style: solid;
+    border-width: 1px;
+    overflow: hidden;
+    word-break: normal;
+    border-color: #bbb;
+    color: #493F3F;
+    background-color: #9DE0AD;
+}
+.tg .tg-ii5f {
+    background-color: #000000;
+    color: #ffffff;
+}
+.tg .tg-bgyt {
+    background-color: #000000;
+    color: #ffffff;
+    text-align: center;
+}
+@media screen and (max-width: 767px)  {
+    .tg  {
+    width:  auto !important;
+}
+.tg col  {
+    width:  auto !important;
+}
+.tg-wrap  {
+    overflow-x:  auto;
+    -webkit-overflow-scrolling:  touch;
+    margin:  auto 0px;
+}
+}

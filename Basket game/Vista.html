@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<head>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="CSS/CSS.css">
+	<title>Basket game</title>
+
+</head>
+<body align="center" background="images/background.jpg">
+	<nav class="navbar navbar-inverse" style="background-color:black !IMPORTANT; border-color:black !IMPORTANT;"><h1 style="text-align:center; color:azure;">BASKET GAME</h1></nav>
+	<div class="main">
+		<section >
+			<span class="enjoy-css">Seleccione el modo de juego</span>
+			<div class="btn-group" role="group" aria-label="..." style="margin-bottom: 10px;">
+				<button type="button" class="btn btn-default" onclick="gameMode('tries')">Por Intentos</button>
+				<button type="button" class="btn btn-default" onclick="gameMode('timer')">Por Tiempo</button>
+				<button type="button" class="btn btn-default" onclick="training()">Practica</button>
+			</div>
+			<div>
+				<div id="group" class="btn-group" onclick="openDrop()">
+					<button style="display:none" id="text" type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="true" class="btn-group">
+						<span id="tries" style="display:none">Numero de intentos </span> <span id="tries2" class="caret" style="display:none"></span>
+						<span id="timer" style="display:none">Cantidad de tiempo </span> <span id="timer2" class="caret" style="display:none"></span>
+					</button>
+					<ul class="dropdown-menu" role="menu" class="btn-group">
+
+						<li style="display:none" id="tries3">
+							<a onClick="changeDifficultyTries('10')" class="btn-group">10 Intentos</a>
+						</li>
+						<li style="display:none" id="tries4">
+							<a onClick="changeDifficultyTries('20')" class="btn-group">20 Intentos</a>
+						</li>
+						<li style="display:none" id="tries5">
+							<a onClick="changeDifficultyTries('30')" class="btn-group">30 Intentos</a>
+						</li>	
+
+						<li style="display:none" id="timer3">
+							<a onClick="changeDifficultyTimer('30')" class="btn-group">30 Segundos</a>
+						</li>
+						<li style="display:none" id="timer4">
+							<a onClick="changeDifficultyTimer('60')" class="btn-group">60 Segundos</a>
+						</li>
+						<li style="display:none" id="timer5">
+							<a onClick="changeDifficultyTimer('90')" class="btn-group">90 Segundos</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div>
+				<span id="UsernameAd" style="display:none;margin-top: 10px;" class="enjoy-css">Ingresa tu nombre para guardar el score</span>
+				<input id="Username" onkeydown="sumbitUsername(event)" style="display:none;margin-top: 10px;" type="text" maxlength="10" class="enjoy-css"></input>
+			</div>
+			<div class="tg-wrap" style="margin-top: 10px;">
+				<table class="tg">
+				  <tr>
+				    <th class="tg-bgyt" colspan="12">TOP SCORES</th>
+				  </tr>
+				  <tr>
+				    <td class="tg-bgyt" colspan="6">POR INTENTOS</td>
+				    <td class="tg-bgyt" colspan="6">POR TIEMPO</td>
+				  </tr>
+				  <tr>
+				    <td class="tg-ii5f" colspan="2">10 Intentos</td>
+				    <td class="tg-ii5f" colspan="2">20 Intentos</td>
+				    <td class="tg-ii5f" colspan="2">30 Intentos</td>
+				    <td class="tg-ii5f" colspan="2">30 Segundos</td>
+				    <td class="tg-ii5f" colspan="2">60 Segundos</td>
+				    <td class="tg-ii5f" colspan="2">90 Segundos</td>
+				  </tr>
+				  <tr>
+				    <td class="tg-ii5f">Nombre</td>
+				    <td class="tg-ii5f">Score</td>
+				    <td class="tg-ii5f">Nombre</td>
+				    <td class="tg-ii5f">Score</td>
+				    <td class="tg-ii5f">Nombre</td>
+				    <td class="tg-ii5f">Score</td>
+				    <td class="tg-ii5f">Nombre</td>
+				    <td class="tg-ii5f">Score</td>
+				    <td class="tg-ii5f">Nombre</td>
+				    <td class="tg-ii5f">Score</td>
+				    <td class="tg-ii5f">Nombre</td>
+				    <td class="tg-ii5f">Score</td>
+				  </tr>
+				  <tr>
+				    <td id="10TN0" class="tg-ii5f"></td>
+				    <td id="10TS0" class="tg-ii5f"></td>
+				    <td id="20TN0" class="tg-ii5f"></td>
+				    <td id="20TS0" class="tg-ii5f"></td>
+				    <td id="30TN0" class="tg-ii5f"></td>
+				    <td id="30TS0" class="tg-ii5f"></td>
+				    <td id="30SN0" class="tg-ii5f"></td>
+				    <td id="30SS0" class="tg-ii5f"></td>
+				    <td id="60SN0" class="tg-ii5f"></td>
+				    <td id="60SS0" class="tg-ii5f"></td>
+				    <td id="90SN0" class="tg-ii5f"></td>
+				    <td id="90SS0" class="tg-ii5f"></td>
+				  </tr>
+				  <tr>
+				    <td id="10TN1" class="tg-ii5f"></td>
+				    <td id="10TS1" class="tg-ii5f"></td>
+				    <td id="20TN1" class="tg-ii5f"></td>
+				    <td id="20TS1" class="tg-ii5f"></td>
+				    <td id="30TN1" class="tg-ii5f"></td>
+				    <td id="30TS1" class="tg-ii5f"></td>
+				    <td id="30SN1" class="tg-ii5f"></td>
+				    <td id="30SS1" class="tg-ii5f"></td>
+				    <td id="60SN1" class="tg-ii5f"></td>
+				    <td id="60SS1" class="tg-ii5f"></td>
+				    <td id="90SN1" class="tg-ii5f"></td>
+				    <td id="90SS1" class="tg-ii5f"></td>
+				  </tr>
+				  <tr>
+				    <td id="10TN2" class="tg-ii5f"></td>
+				    <td id="10TS2" class="tg-ii5f"></td>
+				    <td id="20TN2" class="tg-ii5f"></td>
+				    <td id="20TS2" class="tg-ii5f"></td>
+				    <td id="30TN2" class="tg-ii5f"></td>
+				    <td id="30TS2" class="tg-ii5f"></td>
+				    <td id="30SN2" class="tg-ii5f"></td>
+				    <td id="30SS2" class="tg-ii5f"></td>
+				    <td id="60SN2" class="tg-ii5f"></td>
+				    <td id="60SS2" class="tg-ii5f"></td>
+				    <td id="90SN2" class="tg-ii5f"></td>
+				    <td id="90SS2" class="tg-ii5f"></td>
+				  </tr>
+				  <tr>
+				    <td id="10TN3" class="tg-ii5f"></td>
+				    <td id="10TS3" class="tg-ii5f"></td>
+				    <td id="20TN3" class="tg-ii5f"></td>
+				    <td id="20TS3" class="tg-ii5f"></td>
+				    <td id="30TN3" class="tg-ii5f"></td>
+				    <td id="30TS3" class="tg-ii5f"></td>
+				    <td id="30SN3" class="tg-ii5f"></td>
+				    <td id="30SS3" class="tg-ii5f"></td>
+				    <td id="60SN3" class="tg-ii5f"></td>
+				    <td id="60SS3" class="tg-ii5f"></td>
+				    <td id="90SN3" class="tg-ii5f"></td>
+				    <td id="90SS3" class="tg-ii5f"></td>
+				  </tr>
+				  <tr>
+				    <td id="10TN4" class="tg-ii5f"></td>
+				    <td id="10TS4" class="tg-ii5f"></td>
+				    <td id="20TN4" class="tg-ii5f"></td>
+				    <td id="20TS4" class="tg-ii5f"></td>
+				    <td id="30TN4" class="tg-ii5f"></td>
+				    <td id="30TS4" class="tg-ii5f"></td>
+				    <td id="30SN4" class="tg-ii5f"></td>
+				    <td id="30SS4" class="tg-ii5f"></td>
+				    <td id="60SN4" class="tg-ii5f"></td>
+				    <td id="60SS4" class="tg-ii5f"></td>
+				    <td id="90SN4" class="tg-ii5f"></td>
+				    <td id="90SS4" class="tg-ii5f"></td>
+				  </tr>
+				</table>
+			</div>
+		</section>
+		<section>
+			<canvas id="canvas" width="1200" height="500"></canvas>
+			<aside></aside>
+		</section>
+		<section>
+		</section>
+	</div>
+</body>
+
+<script src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
+<link rel="stylesheet" type="text/css" href="CSS/onepage-scroll.css">
+<script type="text/javascript" src="JS/jquery.onepage-scroll.min.js"></script>
+<script type="text/javascript" src="JS/Clases.js"></script>
+<script type="text/javascript" src="JS/Functions.js"></script>
+<script type="text/javascript" src="JS/JS.js"></script>
+<script type="text/javascript" src="JS/Events.js"></script>
+	
