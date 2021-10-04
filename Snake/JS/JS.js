@@ -312,7 +312,7 @@ $(document).ready(function (){
 		if (boolDobleTecla==false) {
 			var key = event.which
 
-			if (key=="80") {
+			if (key=="32") {
 				if (pausa==false) {pausa=true}
 				else {pausa=false};				
 				//alert("El juego esta pausado, presione aceptar para continuar")
