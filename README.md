@@ -1,5 +1,5 @@
 # Nico-Games
-It requires internet to load bootstrap resources.
+It requires internet to load resources.
 ### Links
 GitHub hosts tend to be faster.
 - Basket Game
