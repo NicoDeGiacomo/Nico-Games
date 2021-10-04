@@ -1,15 +1,13 @@
 <!DOCTYPE html>
+
 <head>
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 	<link rel="stylesheet" type="text/css" href="CSS/CSS.css">
-	<script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
-	<script type="text/javascript" src="JS/JS.js"></script>	
-	
-
+	<script type="text/javascript" src="JS/JS.js"></script>
 	<title>Ahorcado</title>
-
-
 </head>
+
 <body align="center" onload="iniciar()">
 	<header>
 		<h1>
@@ -23,25 +21,27 @@
 		</div>
 
 		<div>
-			<button id="modoDeJuego" class="btn btn-default" onclick="DosJugadores(event)">Dos Jugadores</button>
+			<button id="modoDeJuego" class="btn btn-dark" onclick="DosJugadores(event)">Dos Jugadores</button>
 			<input class="form-control" type="password" style="display:none" id="PlaceHolder" onkeypress="escribirPalabra(event)" placeholder="Ingresa una palabra">		
 		</div>
 
 		<div style="margin-top: 10px;">
-			<button id="modoTeclado" class="btn btn-default" onclick="CambioTeclado(event)">Cambiar teclado</button>
+			<button id="modoTeclado" class="btn btn-dark" onclick="CambioTeclado(event)">Cambiar teclado</button>
 		</div>
+
+		Use your physical keyboard or the virtual keyboard in the screen.
 
 	</aside>
 
 	<section>		
 		<br>
 		<div id="dibujo">
-			<img class="imagen" src="images/ahorcado-vacio.png" />
-            <img class="imagen" src="images/cabeza.png" hidden />
-            <img class="imagen" src="images/cuerpo.png" hidden />
-            <img class="imagen" src="images/brazos.png" hidden />
-            <img class="imagen" src="images/piernas.png" hidden />
-            <img class="imagen" src="images/ahorcado-completo.png" hidden />
+			<img class="imagen" id="dibujo-0" src="images/ahorcado-vacio.png" />
+            <img class="imagen" id="dibujo-1" src="images/cabeza.png" hidden />
+            <img class="imagen" id="dibujo-2" src="images/cuerpo.png" hidden />
+            <img class="imagen" id="dibujo-3" src="images/brazos.png" hidden />
+            <img class="imagen" id="dibujo-4" src="images/piernas.png" hidden />
+            <img class="imagen" id="dibujo-5" src="images/ahorcado-completo.png" hidden />
 		</div>		
 		<br>
 		<div id="letras"></div>

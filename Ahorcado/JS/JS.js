@@ -4,24 +4,22 @@ var fallos=0;
 var modificadorAciertos=0;
 
 function teclado(){
-	var abecedario=["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
-	return abecedario;
+	return ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
 }
 function teclado2(){
-	var abecedario=["Q","W","E","R","T","Y","U","I","O","P","A","S","D","F","G","H","J","K","L","Z","X","C","V","B","N","M"];
-	return abecedario;
+	return ["Q", "W", "E", "R", "T", "Y", "U", "I", "O", "P", "A", "S", "D", "F", "G", "H", "J", "K", "L", "Z", "X", "C", "V", "B", "N", "M"];
 }
 
 function iniciar(){
 
 
 	//Creo los espacios para las letras:
-	for (var i = 0; i < palabra.length; i++) {			
-		var div=document.createElement("div");//Creo un div
+	for (let i = 0; i < palabra.length; i++) {
+		let div=document.createElement("div");//Creo un div
 		div.setAttribute("class","letras");//Con la clase letras
 		div.setAttribute("id","block"+[i])//les asigno un ID distinto a cada uno
 		document.getElementById("letras").appendChild(div)//Lo agrego al div con id #letras
-	};
+	}
 
 
 	//Creo las teclas:
@@ -33,7 +31,7 @@ function iniciar(){
 		boton.setAttribute("id","Tecla"+abecedario[i])
 		boton.innerHTML=abecedario[i];
 		document.getElementById("teclado").appendChild(boton);
-	};
+	}
 	//Guardo el tipo de teclado actual
 	document.getElementById("tipoTeclado").setAttribute("value","QWERTY")
 
@@ -134,7 +132,7 @@ function escribirPalabra(event){
 
 function seleccionarPalabra(){
 
-	var diccionario=[
+	let diccionario=[
 					"HIPOGRIFO",
 					"TRIPLICAR",
 					"MERODEAR",
@@ -149,10 +147,8 @@ function seleccionarPalabra(){
 					"MISANTROPIA",					
 					];
 
-	//un numero entre 0 y 0.99 multiplicado por el largo del array y redondeado para abajo, puede dar cualquier numero entre 0 y el ultimo elemento del array
-	var palabra=diccionario[Math.floor(Math.random() * diccionario.length)]; 
-
-	return palabra;
+	// un numero entre 0 y 0.99 multiplicado por el largo del array y redondeado para abajo, puede dar cualquier numero entre 0 y el ultimo elemento del array
+	return diccionario[Math.floor(Math.random() * diccionario.length)];
 
 }
 function Click(event){
@@ -163,8 +159,6 @@ function Click(event){
 	$("#modoTeclado").fadeOut(500)
 
 	if (revisarLetra(boton.innerHTML)) {
-
-
 		//Sumo aciertos en base a la cantidad de aciertos
 		aciertos+=modificadorAciertos;
 		//alert(aciertos)
@@ -172,29 +166,37 @@ function Click(event){
 		//Las muestro en verde
 		var p=document.createElement("p");
 		p.innerHTML=boton.innerHTML		
-		p.setAttribute("class","label label-success")	
+		p.setAttribute("class","text-success")
 		document.getElementById("letrasUsadas").appendChild(p)
 
-		if (aciertos==palabra.length) {			
+		if (aciertos==palabra.length) {
+			// Timeout fix to finish showing the word.
+			setTimeout(function(){
 
-			if(confirm("Ganaste, jugar de nuevo?")){
-				location.reload();
-			}else{
-				close();
-			}
-		};
+				if(confirm("Ganaste, jugar de nuevo?")){
+					location.reload();
+				}else{
+					close();
+				}
+			}, 10);
+		}
 
-	} else{
+	} else {
 
 		fallos++;
 
 		//Las muestro en rojo
 		var p=document.createElement("p");
-		p.innerHTML=boton.innerHTML		
-		p.setAttribute("class","label label-danger")	
+		p.innerHTML=boton.innerHTML
+		p.setAttribute("class","text-danger")
+		p.setAttribute("color","danger")
 		document.getElementById("letrasUsadas").appendChild(p)
 
-		$(document.images[fallos]).show();
+		//$(document.images[fallos]).show();
+
+		for (let i = 1; i <= fallos; i++) {
+			$("#dibujo-"+i).removeAttr("hidden")
+		}
 
 		if (fallos==5) {
 			var abecedario=teclado2();
@@ -211,20 +213,21 @@ function Click(event){
 						var p=document.createElement("p")
 						p.innerHTML=abecedario[h]
 						document.getElementById("block"+[i]).appendChild(p)
-					};
-				};
-			};
-
-
-			if(confirm("Perdiste, jugar de nuevo?")){
-				location.reload();
-			}else{
-				close();
+					}
+				}
 			}
 
-		};
+			// Timeout fix to finish showing the word.
+			setTimeout(function(){
 
-	};
+				if(confirm("Perdiste, jugar de nuevo?")){
+					location.reload();
+				}else{
+					close();
+				}
+			}, 10);
+		}
+	}
 
 	/*var p=document.createElement("p");
 	p.innerHTML=boton.innerHTML
